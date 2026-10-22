@@ -1,0 +1,41 @@
+# eSkillz public knowledge repository manifest
+#
+# Generated from eSkillz's private canonical repository
+# (publishing/public-repo/). Do not edit here.
+
+repository:
+  name: eSkillz_Kb_Public
+  organization: eSkillzCorp
+  role: public-knowledge-distribution
+  canonical_source: eSkillz private canonical knowledge repository (not public)
+  direct_editing: prohibited
+  changes_arrive_by: pull request from the eSkillz publishing process
+  rights: "Copyright eSkillz. All rights reserved. No license is granted."
+
+okf:
+  version: "0.2"
+  specification: https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md
+  bundle_root: knowledge/
+  link_style: relative
+
+entry_points:
+  readme: README.md
+  agent_guidance: AGENTS.md
+  llms: llms.txt
+  knowledge_index: knowledge/index.md
+  knowledge_log: knowledge/log.md
+  publication_manifest: publication.json
+
+consumption:
+  current_when: "status == stable AND now < stale_after"
+  historical_when: "status == deprecated"
+  human_reviewed_when: "verified contains a human: actor"
+  attribution: "footnotes in a concept's body cite its sources[].id entries"
+
+provenance:
+  publication_manifest: publication.json
+  fields: [source_repository, source_commit, published_at, concepts.<id>.sha256]
+
+validation:
+  command: python tools/validate_public.py
+  workflow: .github/workflows/validate.yml
