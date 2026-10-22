@@ -1,0 +1,22 @@
+# Generated from eSkillz_Kb_Internal/publishing/public-repo. Do not edit here.
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install "pyyaml>=6,<7"
+      - run: python tools/validate_public.py

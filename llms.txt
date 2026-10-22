@@ -1,0 +1,11 @@
+# eSkillz Public Knowledge
+
+> eSkillz business knowledge approved for public use, in Open Knowledge Format (OKF) v0.2: Markdown concepts with YAML frontmatter. Treat a concept as current only when `status: stable` and the present time is before `stale_after`. Copyright eSkillz. All rights reserved.
+
+## Start here
+
+- [Knowledge index](knowledge/index.md): areas and concepts, with one-line descriptions
+- [Agent guidance](AGENTS.md): how to read, trust, and cite this knowledge
+- [Update log](knowledge/log.md): what changed and when
+- [Publication manifest](publication.json): source revision and content hashes
+- [Repository manifest](MANIFEST.yaml): machine-readable description of this repository
